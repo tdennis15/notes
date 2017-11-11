@@ -1,0 +1,60 @@
+CS 460 Notes 10/23/2017
+Getting users to fill out a form, get processed and return information from a server.
+	-Used the inefficient way in HW4, this time we will use the 
+	"USER MODEL". 
+
+USER MODEL. Provides a schema/ template on how to create and fill out information. Gives a carrier for the data. 
+
+visual studio 
+	-create new class in the models, named user. (a user)
+		Creates user objects from the class. 
+		define properties here. 
+			-Last Name -First Name -DOB
+
+			public string FirstName { get;set; }
+			public string LastName { get;set; }
+			public DateTime DOB { get;set }
+			public int Age {
+				get
+				{
+					var today = DateTime.Today;
+					var age = today.Year - DOB.Year;
+					if (DOB > today.AddYears(-age))
+						age--;
+					return age;
+				}
+			}
+
+			public override string ToString(){
+				return $"{base.ToString()} : {FirstName} {LastName} *etc*
+			}
+
+%Need data storage location for multiple users%
+Added folder under controllers
+	-DAL data access layer
+		security through layers and modularity
+"User Collection" created a new namespace.
+
+		public List<User> TheUsers; (have to add "Using -namespace-")
+		public UserCollection()
+		{
+			TheUsers = new List<User>
+			{
+				new User {FirstName = "Jim", LastName="Johnson", DOB = new DateTime(1940,6,2)}
+			};
+		}
+Dont have to write a constructor, Can access through properties and initializers. Either way is fine, but pick one in
+a group setting
+
+Convention is to use public properties and intializer.
+	
+	-Presentation layer usually is developed last-
+
+(add controller) -MVC 5 controller W/ read/write actions, visual studio 
+		-CRUD pages create read update delete
+
+USER CONTROLLER
+instantiate the user collection
+	private static UserCollection users = new UserCollection(); ctrl + .  to bring up contex box
+		-See slides #3 slide 17 for the type flow
+

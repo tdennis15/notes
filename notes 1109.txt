@@ -1,0 +1,111 @@
+CS 460 NOTES 11/09/17
+*********************************************************************
+Reviewing examples of HW2 in class. Blake sucks, death to blake.jk, blake rocks
+
+Group Advising today @ 3. also at next week. 
+
+have to connect LINQ pad and build queries then paste them into the C# coding. linq pad is a sandbox to build
+and destroy the world.
+
+*********************************************************************
+Roles Rights & Responsibilities
+
+Arch owner
+team member
+product owner 
+stake holder
+specialists
+team lead
+*********************************************************************
+INCEPTION -> getting the project started (assuming it has backing)
+	Goals (2 week discovery phase)
+
+		-Form Initial team		     (who is going to work on it)
+		-Develop common vision	             (find out what is needed
+		-Align with enterprise vision	     (find what the business needs)
+		-explore and establish initial scope (big picture)
+		-identify initial technical strategy (hardware, systems, tech)
+		-develop initial release plan	     (expected dates for milestones)
+		-secure funding			     (environment based)
+		-form work environment		     (Where, what IDE, work day plan)
+		-identify risks			     (what can make it fail)
+
+*********************************************************************
+Feature Dev.
+
+Identify "FEATURES" when doing initial modelling. What kind of support would these features need?
+
+Backlog population -> building a backlog (stack) of features that needed to be implemented in a sprint. Most important first
+
+High level modeling -> doing sketches of features and how they might interact using whiteboards and paper.
+
+*********************************************************************
+Architecture Dev. 
+High level modeling -> using paper and white boards. Talking in the broadest terms possible. ID needs to support.
+*********************************************************************
+Cost estimation
+Reasonable guess based from experiences 
+High level estimate based on agile model
+*********************************************************************
+Release plan and schedules
+
+High level -> guessing
+
+*********************************************************************
+OUTLINE OF INCEPTION (2 week schedule)
+
+Coordinate -> collaborate -> conclude
+
+initiate team and schedule meetings
+
+get together with stake holders
+
+envision req's and features 
+
+Waste white board markers on the project. 
+
+create a common vision, same page and agreement on what needs to be done.
+
+Set up an environment. Throw together a prototype or a quick answer wireframe
+
+talk with stake holders and develop milestones.
+
+<!-- Depeding on size of project time may need to be allocated differently -->
+
+start with REQ's and Architecture modeling
+*********************************************************************
+Begin thinking of ideas for group and individual projects. 
+
+Individual projects need to be on a mobile platform on the original development environment. (avoid cross platform)
+	not in a C#
+
+TEAM PROJECT asp.net mvc deloyed on AZURE. with database. Developed in Visual Studio. Needs to interact with external API.
+*********************************************************************
+Aligning with enterprise and organization
+
+	`adopt common dev guidlines
+	`coding guidelines and practices
+	`adopt common templates
+	`try to only add work and documents that add value. 
+	`maximize the amount of work not done
+	`try to reuse existing architecture and structure if it works
+*********************************************************************
+Write up team guidelines and meetings
+	-they might disrupt teams. (team shuffling)
+*********************************************************************
+Patterns for success in inception:
+	|Keep it short and sufficient (timeline)
+	|dont make hard commitments on estimates
+	|range of estimates on cost and time
+	|minimal but sufficient document for outline	
+
+Patterns for failure in inception:
+	|lack of support for skills development
+	|lack of support for dedicated facilities
+		~need to meet regularly
+	|autocratic project management
+	|jumping into construction without outline
+	|being too detailed
+	|over analysis
+*********************************************************************
+CLAIM FACILITIES! MAKE THEM YOUR OWN! MARK THEM WITH YOUR ODOR!
