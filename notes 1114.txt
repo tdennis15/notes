@@ -1,0 +1,50 @@
+NOTES 11/14/2017
+Registration on labs for winter 461. Just pick one, try to spread it out. There aren't assigned times.
+Groups may be assigned by the end of this term. 
+*****************************************************
+Registering for GIPHY they give you api key, every request needs to send that key. Initial key is just a demo key. 
+Avoid putting credentials on the github or repo pages/ or hash it somehow. 
+
+Examples in RoutingExample project
+*****************************************************
+accessing a 'secret' api key
+
+in the controller in the action result for index
+
+public ActionResult Index(){
+		//we want to request an encrypted version and then unwrap, Example retrieval outside of repo.
+	string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["GiphyAPIKey"];
+...
+...
+...
+}
+
+go to web config app settings ->
+
+//we can merge appsettings, we want to merge a file outside of the project
+<appSettings file="..\..\..\..\AppSettingsSecrets.config">
+	<add key="GiphyAPIKey" value=" <whatever the api key is>"/>
+
+in our AppSettingsSecrets.config a few folders up
+
+<appSettings>
+	<add key="GiphyAPIKey" value=" <whatever the api key is>"/>
+</appSettings>
+
+Then remove it from the web config settings, we had it there just to show that it would link. 
+
+Now we have a file outside the file system that contains secured data that the project can use, 
+but wont be saved as part of the project. 
+
+This Works for passwords, keys and strings that dont belong in the project.
+*****************************************************
+Routing -> CH 15 asp.net mvc 5 book
+Making new routes or update existing.
+
+We made a view and controllers to try routing.
+
+RouteData is given to the controller after the route has been created. We can pull values and check the mapping
+
+note -> return View("ActionName"); will return a page of ActionName.cshtml, this overloads the default. 
+
+if you don't give data when going to a site, it routes to the defaults in RouteConfig.cs/ usually home index
