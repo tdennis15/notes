@@ -1,0 +1,127 @@
+CS 460 Notes 11/13/2017
+****************************************
+When doing your api key just copy/paste for now, need to make it separate
+
+Using linq to make a log. 8-9 need linq and next terms will also use it heavily.
+Get used to it quickly.
+
+Where to do linq queries in HW 6. (slack mentions that you dont do queries in the view -> done in controller)
+	
+	using the Northwind example, how to handle the data logic
+		-> Doing queries on the data, to build a model to pass to a view. 
+		-> Designed to do queries in the controller (by MVC logic)
+		-> Data processing is expected in the controller
+		-> View only generates a display, no data processing
+		-> Model just holds data, shouldn't be building any data
+		-> Shouldn't process in view because it will break / stop working
+****************************************
+Linq works under a deferred execution model. Making elements and functions not being built and run until 
+they are needed. This can cause runtime crashes if functions are built in the wrong order or if they are
+not available. Think Haskell functional programming paradigm. 
+
+When chaining functions it doesn't build each expression individually, just nests the objects and waits
+for a request to actually execute it. This can cause run time errors if you have dependencies. "Lazy Execution"
+
+This is efficient in terms of execution "pulling the data". Only finds the data when it's required. 
+Contructs a function that returns the data. 
+
+Execution on a remote data base can be difficult because it needs all of the data to build the function but 
+doesn't have access to all the data that may be in a function. Another cause of runtime error.
+
+Work around is Interpreted Queries. Descriptive queries, over sequences of IQueriable. Emit expression trees 
+that are interpreted at runtime. Takes each of the command structures (where, select etc) and treats 
+it like an expression to build a tree, traverses the tree and then builds the SQL query from the logic. 
+Then executes and feeds into the database. these follow a deferred execution model. 
+End result is the same but allows for a remote access of database. 
+Doesn't do anything until runtime where it is needed. 
+
+Execution is different than a local query. Linq will translate the expression an interpreted query as a sequence. 
+****************************************
+SQL executioning, Doesn't run the query until the data is requested from the function
+	This should be done in the controller.  (sometimes in the view) ie -> 
+
+	var employees = db.Employees.Include(e => e.Employee1);
+	 return View(employees.ToList());
+
+Need to use the Linq methods that cause the query to collapse and request data. 
+****************************************
+Why doing DB access in a view is a bad idea. 
+	access to database is through the DBContextClass (made as a private instance)
+		the lifetime of this class is not connected to the view
+		the MVC logic will build the class but it may not be available in the view anymore
+
+public ActionResult Index() {
+	using (Northwind Context db = new NorthwindContext()){
+		var employees = db.Employees.Include(e => e.Employee1);
+	 	return View(employees.ToList());
+	}
+}
+//This will call the garbage collection after the view has been returned. Increased efficiently because HTTP is stateless.
+//reduces risk of calling the DB in the view. makes the view unable to access a used model or database. 
+****************************************
+Strongly typed views on HW6 
+
+what model is being passed? 	
+	<IEnumerable> 
+
+How do you pass in more? 
+	make a view model. 
+	throw it in a viewbag. (not strongly typed but okay for HW6) 
+****************************************
+VIEW MODEL
+	passing in multiple lists to the view from a model
+	make one class with both lists in there
+@model EmployeeCustomerVM //then go make it. 
+
+models folder -> add -> new folder -> "VIEW MODELS" -> add in view model -> new Class "EmployeeCustomerVM"
+
+public class EmployeeCusomterVM
+{
+	public IEnumberable<Employee> EmployeeList { get; set; }
+	public IEnumberable<Customer> CustomerList { get; set; }
+}
+
+-> Controller
+
+public ActionResult Index() {
+	using (Northwind Context db = new NorthwindContext()){
+		EmployeeCustomerVM vm = new EmployeeCustomerVM() {EmployeeList = db.Employees.ToList(), CustomerList = db.Customers.ToList() };
+		var employees = db.Employees.Include(e => e.Employee1);
+	 	return View(employees.ToList());
+	}
+}
+
+View Model can contain other models making the construction of the view easier. Note that this may not work without
+interpretation, Think of this as Psuedo Code
+****************************************
+Routing
+HW7 custom routing
+
+RouteConfig
+
+	public static void RegisterRoutes(RouteCollection routes)
+{
+	routes.IgnoreRoute("{resource}.axd/{*pathInfo}";
+	
+	routes.MyRoute(
+		name: "Default",
+		url: "MySite/{controller}/{action}/{id},
+		defaults: new { controller = "Home", action = "Index", id = UrlParameterOptional }
+	);
+
+
+	routes.MapRoute(
+		name: "Default",
+		url: "{controller}/{action}/{id},
+		defaults: new { controller = "Home", action = "Index", id = UrlParameterOptional }
+	);
+}
+
+mysite.com/Home/Index
+	Home -> HomeController
+	Index -> Action Method index
+
+This is done by routing. System tries to match the input URL in a 1-1 relation to the given routes for 
+how they are interpreted. Order of routes in the file matter.  It will return the first one that matches. 
+	Built in variables -> Controller / Action / Area
+	Avoid using variables unless that is specifically what you need.

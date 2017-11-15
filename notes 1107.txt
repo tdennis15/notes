@@ -1,0 +1,47 @@
+Notes Tuesday 11/7/2017
+After Midterm
+*********************************
+HW6 -> FEATURE ONE | searching by category and subcategory in the database. Then display the products in a list or grid. 
+not searching by keywords but just navigating through the database. Dont show results until user has selected
+category and sub category. Then only show short listings or a paged version of the results. 
+
+Dont want the auto generated pages for this.
+*********************************
+HW6 -> FEATURE TWO | Inserting new info into the database. The customer has the product ID or the DB knows the ID. 
+Leaving a review, name email rating and a string review. The reviews then need to be visible. This is done by each 
+product. 
+*********************************
+Building non trivial pages, requires in depth thought and thinking ahead.
+
+*********************************
+HW 7 -> Javascript and AJAX with an API from server. Building a page that searche Giphy for new Gifs. Needs to be 
+Responsive and dynmaic. ONLY 1 PAGE. JS pings our server, our server pings GIPHY, giphy returns to server, server builds
+javascript, javascript builds the page. ALL AJAX METHODS. 
+Will need additional features, just to make it more complicated and maybe safer. 
+*********************************
+8/9 are equivalent to the final exam. NEED TO BE ABLE TO DO THIS IN 2 HOURS TO PASS. 
+*********************************
+
+HW 6 Queries
+
+Example in LINQ
+
+Northwind. 
+
+Customers -> returns all the customers, including navigations properties (relations) 
+"Customer has Orders"
+
+Customers.Where(c = > c.Country == "Canada")
+	 .OrderBy(c => c.City)
+	 .Select(c => new {
+	 	ID = c.Customerid,
+		City = c.City,
+		Name = c.ContactName,
+		Phone = c.Phone
+		OrderCount = c.Orders.Count()	<!--Sub Query -->
+	  })
+	 .OrderByDescending(sc => sc.OrderCount) <!--use a different lambda marker when on a different data element -->	
+	 .ToList()
+*********************************
+
+SLIDES 2 -> JSON and AJAX (AJAJ) Maps to C# Anonymous objects.

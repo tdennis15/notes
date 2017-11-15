@@ -1,0 +1,89 @@
+11/8/2017 Notes CS460
+
+Adding a custom .js file in our MVC api. Refer to previous for set up. 
+
+Making a dynamic page from input, so that the browser doesn't need to reload. This makes modification a lot faster
+and if there are a lot of elements. Based on the network connection.
+
+inside our custom 'numbers.js' inside the scripts file
+
+//accessing a button on the view
+$("#Request").click(function () {
+	var a = $("#Count").val();
+	console.log(a);
+
+	//want to send 'a' through an AJAX request
+	//lets handle the request through a different controller "simple api controller"
+	var source = "/SimpleAPI/RandomNumbers" + a; //appending the value to the path 
+	//RandomNumbers is the action method, created here and will mirror in controller
+
+	console.log(source); returns the number as part of the action path
+	
+	// Send an async request to our server, requesting JSON back
+	$.ajax({
+		type: "GET",
+		dataType: "json",
+		url: source,
+		success: displayData, //created displayData, need to implement
+		error: errorOnAjax
+	});
+});
+
+function displayData(data){
+	console.log(data);
+	$("#Message").text(data.message); //$("#Message").text(data["message"]);
+	$("#Amount").text("Number of vals requested " + data.num);
+	$("#Values").text(data.numbers);
+	
+	var sum = data.values.reduce(function (a, b) {return a + b; }); //simulates haskell fold
+	var ave = sum / data.numbers.length;
+	$("#Average").text("Average of values " + ave);
+}
+
+function errorOnAjax(){
+console.log("error");
+}
+// Need to create the action method in controller to handle the input now. But we have implemented a request to a server.
+
+****************************************************************************************************
+in controller SimpleAPIController
+// we want to bypass the view and instead update the page instead of making a new one
+
+	//GET: SimpleAPI/RandomNumbers/10    ///including data in the path
+	public JsonResult RandomNumbers(int? id = 100 ){ //where id pulls the number from the path
+	  Random gen = new Random();
+
+	  int[] arr = new int[(int)id]; //unsafe typing,
+		
+		for(int i = 0; i<arr.Length; i++){
+			arr[i] = gen.Next(1000);
+		}
+
+	  var data = new { 
+		message = "Hello from SimpleAPI", //C# properties, members, intialized and comma separated
+		num = (int)id,	
+		numbers = arr
+	  }; 
+
+	  return Json(data, JsonRequestBehavior.AllowGet); //allows Ajax access to server function
+		//data the object needs to map to json data types (primatives)
+	}
+//Done with action handling, now need to build the page with the new data.
+
+**************************************************
+in index.cshtml
+
+empty <div></div>
+
+	<div class *****>
+		<div id="Message"></div>
+		<div id="Amount"></div>
+		<div id="Values"></div>
+		<div id="Average"></div>
+	</div>	
+**************************************************
+Korean takeaway -> TESTING IS VERY HARD, have to use integration testing, unit testing is pretty difficult. 
+controller action method acts with the client, but may have to interact with other parts. AJAX with client, AJAX
+with GIPHY. Using http get request in C#. 
+
+id routing tag, app start -> routeconfig.cs

@@ -1,0 +1,108 @@
+Notes CS460 11/15/2017
+*************************************
+Look ahead _> Modeling and cloud deployment next week. Don't have to finish every part ofthe final to pass. 
+	Access to portfolio during final, including links and documents. (can't stack overflow) 
+	Access to git repository as well. 
+*************************************
+Vision in Agile Development
+	*What are you going to produce?
+	*How long will it take?
+	*What will it cost?
+	*How are you going to build it?
+	*Do you understand the risks?
+
+Establish a common vision so that everyone knows and understands the same goals in a team. 
+
+Styles -> 
+	Detailed documents or proposals
+	Light weight outlines
+	Vision radiators -> Ideas
+	nothing at all (not recommended
+Our vision will be encompassing all the aspects of the projects but not super detailed
+
+Need to bring stake holders to agreement around the vision
+	=>Active stakeholder participation
+	=>Shared Vision
+*************************************
+Identifying the initial scope of the project
+	-> might already have some ideas of the needs and features.
+
+Initial requirements modeling: Why its good.
+	->Answer the fundamental business questions
+	->improve productivity later
+	->reduced business risk
+	->increase scalability
+		-Builds in infrastructure for flexibilty 
+		-Allows for new features to be added easily
+
+Should only take hours and days not weeks or months, No big requirements up front.
+	Over analysis of requirements will increase risk, reduce flexibility, and cost more money.
+Remember that things will change, new features added, old ones removed. Customer may have no idea what they want
+Over planning reduces the flexibility. 
+*************************************
+Modeling in Agile
+	
+User:
+	-|User stories
+		->short high level descriptions of how a user would go through the program
+	-|use cases
+		->possible functions and input output flow
+	-|Usage scenarios
+		->What would happen to data and input, what would give for output
+
+Domain: Entities and Relationships
+	-|ER or UML diagrams
+	-|CRC cards
+
+UI:
+	-|Wireframes, Sketches & Diagrams
+	-|Flow Diagram
+
+Non-functional and Quality or Technical requirements
+
+*************************************
+Software Requirements
+	->Defining the req
+	->ID the processes and management
+	->elicitation -Sources and techniques to collect the fundamental requirements
+	->req analysis
+	->req documentation
+	->req validations
+*************************************
+Informal drawings and diagrams can capture the design ideas.  
+	->ID roles actions and features
+
+Keep big picture in mind.
+
+agilemodeling.com/essays/initialRequirementsModeling.htm
+*************************************
+Work management strategy
+	@Formal change management, change contol board, change requests and tickets
+	@scrum product backlog
+	@work item stack
+	@work item pool
+*************************************
+Non functional requirements
+	Views and concerns on topics and needs.
+IE Data storage and availability
+hardware modeling
+*************************************
+Architecure modeling
+	->levels of detail
+		everything to nothing ,and the range in between
+*************************************
+User Stories
+	primary means of recording requirements
+Writing user stories 
+	->top level 
+	->more detail
+	->ALL the detail
+"As a '<type of user>', I want '<some goal>' so that '<some reason>'".
+As a student I want to enroll so that I can go to school.
+	common flow -> Role, Action, Context 
+
+Describes the software from the user's perspective on functionality and access.
+
+Refine the detail as more stories are made and the higher levels are addressed. 
+
+They can turn into work items in the backlog

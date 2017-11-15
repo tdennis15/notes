@@ -1,0 +1,130 @@
+MIDTERM MONDAY 
+Mult choice True/False select 1 or more
+No code writing, but Questions on syntax
+*********************************
+Items not on test.
+HW5 does not include Linq queries or Entity Framework. Delagates functions or lambda functions
+*********************************
+Items on TEST EVery THING ELSE. 
+HW's due on Monday 1-5
+*********************************
+Roles right & responsibilities.
+Team members -> roles 
+	teamwork
+	individuals and interactions over processes and tools.
+Getting a job done properly over following a plan. 
+
+Role - A part that you play within a given situation ->Stakeholders, team leads, team member etc. May play different role
+Right - Something to which you have a just claim
+Responsibilties - Duties you owe to someone else
+*********************************
+Rights of Everyone
+	~To be treated with respect
+	~to have decision made in a timely manner
+	~to produce and recieve quality work, based on standards and principles
+	~to estimate the activities you are actively involved with, and have those estimates respected. 
+		Aggressive estimates yet still achievable.
+	~to be provided enough resources(time/ money)
+	~To have commitments honored or renegotiated
+	~To determine how your resources will be invested
+	~To be given the opportunity to gain the knowledge and skill pertinent to making the project a success.
+		Learn the technology.
+	~To work in a safe environment where people have the opportunity to make mistakes, and learn from those mistakes
+	~To be commended, nurtured, and supported
+	~to be provided good-faith info in a timely manner. "Best guess"
+	~To own your organizations software processes, following actively improving these processes when needed. 
+	
+poor Communication and bad interations are the biggest cause of problems in a team environment.
+*********************************
+The Responsibilities of Everyone
+	~To produce a solution that best meets your stakeholder needs with the degree of resources they are willing to invest
+	~to optimize your organizations resources invested in your team and project
+	~to be willing to collaborate extensively within your team as well as working with others outside of your specialties
+	~to share all information, including "Work In Progress"
+	~To coach others in your skills and experiences
+	~To validate your work to the best of your ability, as early as possible, working with others as needed
+	~to actively expand your knowledge and skillset and apply these skills when needed
+	~Attend meetings in person
+	~proactively improve performance
+	~Avoid accepting work outside the iteration without agreement by the team. Any new work should be prioritized
+The responsibilities are based on trust and may not reflect all of those in the workplace
+*********************************
+ALL TEAM MEMBERS EQUAL in Agile -> D.A.D. teams.
+*********************************
+ROLES
+standard roles in DAD
+	~Primary Roles
+		Stake Holders
+
+		TEAM ROLES- core team
+			Team lead
+			Product owner
+			Team members
+			Architecture owner
+	
+	~Secondary Roles
+		Specialist
+		Independent Tester
+		Domain Expert
+		Technical Expert
+		Integrator - integrates the system 
+*********************************
+Stake Holders
+	Those who have a vested interest in a working product
+
+	~End users
+		Customers or who is buying the product.
+	~Principals
+	~partners
+	~insiders
+*********************************
+Product Owner	
+"The one voice of the customer", the stakeholder proxy
+		Using the Team leader as a proxy to the stakeholder for information. 
+		A proxy Unifies the info and requests between the team and stakeholder
+Prioritize the work for team, taking in the needs of the team and stakeholder
+Gains access to experts and gives the team the business perspective.
+*********************************
+Team members - 
+	~Developers
+	~Programmers
+Focuses on producing the solution,
+testing analysis, estimation and building of the product
+*********************************
+Team Lead
+	Team facilitator, guide, servant-leader agile coach
+Part of the team and do work with the rest
+	*Agile teams are self organizing*
+Helps facilitate and manage the Agile process, Will run the meetings and monitor the progress of the production cycles.
+(^-^)
+Leadership over management
+creates the conditions for the team to be successful. *CERTIFIED SCRU(B)M MASTER*
+*********************************
+Architecture Owner
+	Owns architecture decisions, Facilitates creation and evolution of the overall solution design.
+Often the Senior Developer/ or the one with the most experience. 
+	Design is super important, Builds the framework for the solution. 
+	Good foundations are important. 
+Key source of project risk is bad architecture
+May not be neccesary to designate an architect on a smaller team set. 
+*********************************
+Domain Expert
+
+	Works with the team, -Tax experts- someone with specilized info or skills to explain a specific requirement or need
+*********************************
+Specialist
+	Business analyst -Can explain requirements to a technical level
+*********************************
+Technical expert
+	Someone who can build test or design a part of the solution that helps the team
+*********************************
+Testers 
+	Make sure it works
+*********************************
+Integrators
+	Roll out the solution easier
+*********************************
+D.A.D. Is focused to smaller teams doing development, Can scale but needs may change if the teams need to be larger. 
+
+Preview to next week -
+	Inception of projects

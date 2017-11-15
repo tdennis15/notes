@@ -1,0 +1,80 @@
+CS 460 Notes 10/31/2017
+**************************
+
+ MIDTERM MONDAY
+
+**************************
+review of yesterday
+
+used entity frame work to process an existing data base to autogenerate classes in c#. 
+Define the data base and have EF auto generate is the most common proceedure. Customization
+through partial classes. NEVER overwrite the partial that was generated. If DB gets update you
+lose all work. 
+
+**************************
+Writing queries on the imported DB
+How to use the DB
+
+Access through LINQ language integrated queries 
+(SQL)
+Shippers.find(2) where 2 is the primary key
+
+//output a list of all entities
+
+Shippers.ToList()
+
+// Sort
+Shippers.OrderBy(s => s.CompanyName).ToList()
+
+//
+Shippers.OrderByDescending(s => s.Phone).ToList()
+
+// get orders for a particular shipper (FAIL FISH DIDNT WORK)
+use the navigation property
+
+Shippers.Find(2).Orders.ToList().Take(10)
+
+//Starting from an order
+Orders.FirstorDefault()
+Orders.FirstorDefault().Customer.ContactName
+
+Orders.FirstOrDefault().Customer.CustomerDemographics.ToList()
+
+**************************
+ Iqueriable, creates an SQL query and operates it on the database
+once executed IQueriable => IEnumerable => .ToList() makes it an object
+**************************
+public delegate double BinaryOperator (double a, double b)
+declares a new type. 
+can make a new variable of that type, but it is still a function
+BinaryOperator bop = Sub;
+Console.WriteLine("7- 9.3 = " + bop(7,9.3) );
+
+similar to 'pointer to function' in C or C++ and is type safe in this case.
+Creates callback functions or makes it easy to pass methods to methods and pass functions to functions.
+
+s => s.CompanyName is an example
+
+used with Lamda functions to set data types and readability. 
+
+**************************
+LAMDA FUNCTIONS
+an anonymous function 
+x => x * x for example
+(x,y) => x == y
+(int x, string s) => s.Length > x
+
+Majority of Lambda functions are expressions. 
+
+Type signature is defined with Delagates.
+See slides for more detail.
+**************************
+Extention Methods-> how we get new functions defined by delagates into our program so that they may be used.
+Extends an existing type with new methods. Modifies a class or interface without altering the original type,
+only adds to it. 
+Needs to be Static methods put into a Static class
+'this' has to be the first param
+
+once defined you can call it as a built in method, or as a static method. 
+
+ie "Perth".IsCapitalized()
