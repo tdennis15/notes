@@ -1,0 +1,89 @@
+NOTES CS 460 11/16/17
+************************************************
+Working with GIPHY -> you will get an url in your JSON return object. 
+The url should load when used as an image object.
+
+If you request the url, if you add an http header (accept media/jpeg) in the request it returns the image from html page.
+
+Postman?
+************************************************
+Team projects need to use an external API. Consider api's and what features they may offer.
+O-Auth such as Twitch integrated. 
+************************************************
+Inception Example
+
+Brainstorming the problem ie) Mindmap
+	->difficulties
+	->features
+	->excitement
+	->who would like to expand
+
+Create vision statement
+	->get everyone on the same page
+
+Needs and features
+	->determine core features
+	->what data models
+	->integration
+
+Req and architecture
+	->Models 
+	->Diagrams
+	->infrastructure 
+	->architecture
+	->designs around the features
+	->manage the needs
+
+Timeline and release plan 
+	->schedules 
+	->how it would be integrated
+
+User stories, testing
+	->User stories 
+	->product backlog
+	->order of features to be built
+	->creation of testing
+	->EPIC (large overview strokes)
+	->Work items in a single sprint.
+	->Acceptance Tests
+
+Finalize the vision and plan.
+************************************************
+Vision statement
+	lightweight and small. Maybe a paragraph. 
+Think of a user scenario with slightly more detail that happens in the background.
+Keyword templates.
+	For--------->"user"
+	Who---------> what the program helps with
+	the---------> what it operates on or with
+	is----------> small description of the program
+	that--------> main function in context.
+	Unlike------> the current situation
+	our product-> how it changes the current situation in top level wording.
+************************************************
+Use cases
+
+A tool to help figure out how the user will interact with the program and how the program will interact with the user.
+
+Actors 
+
+Actions
+
+Interactions
+
+Systems
+************************************************
+ATM customer wants to withdraw funds or access their account
+ATM operator needs to maintain/service the ATM
+
+To withdraw funds needs to validate pin
+************************************************
+With diagram comes documentation of a walk through description. 
+
+User Story vs Use Case
+	UC -> Formal diagrams and heavyweight documentation with details to implement
+	US -> Lightweight short, details will emerge later, actor action and achievement, focused on value
+************************************************
+UML diagrams 
+	They be gud, lern dem.
+************************************************
