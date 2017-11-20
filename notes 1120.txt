@@ -1,0 +1,85 @@
+CS 460 Notes 11/20/17
+****************************************
+For HW7 all requests to GIPHY must be through the server and not the client.
+Client cant be allowed access to the API Key. 
+****************************************
+No Class tomorrow. Field trip to Portland
+****************************************
+
+Deploying in the CLoud. AZURE
+	Using Example2 with a simple DB
+
+3 Methods of deploying -> using cloud
+Push Model
+	Create a DB in the cloud
+	Create an app
+	Push to deploy from VS
+
+Pull Model
+	Set everything up
+	Have the cloud pull the code
+
+Automated
+	Let the machine do it for you.
+****************************************
+PUSH MODEL -> Local Model has already been completed(built) with local DB and sql UpScript
+Log in to Azure -> Dashboard -> Recieve 200$ -> feel limited to 32mb database size -> 
+
+Step1 -> create database
+	First create a RESOURCE GROUP (left nav bar)
+	add -> "<Resource group name>" 
+	Location -> West US
+	Refresh
+	SQL Databases -> add -> Name it -> subscription -> Resource group (what we just made) -> Blank DB -> 
+			no elastic pool -> Add new server 
+					Server name -> add it
+					Server admin login/ password
+		->pricing tier -> basic 5$/month -> Pin to dashboard
+
+	Create web app 
+	App Services 
+	add -> web app -> app name -> resource group -> use existing ->west us -> pin to dash -> create
+
+Check your new website
+
+	Have DB, have Web app, Both deployed
+
+Need to create DB tables, deploy app from local connecting to cloud DB
+
+Nav to cloud DB
+	->set server firewall
+	rule name ->name of devie
+	add the ip address. SAVE
+
+Nav to Visual studio, log into your azure account.
+	open project
+	Look for azure DB
+	open the new DB
+		Sql server stuff and log into your DB with the azure info
+	New query on 'DB name'
+		Copy pasta the SQL upscript into a query on the remote data base. 
+****************************************
+Need to know the connection strings for the data base so that we can put it in our web application
+	connection strings -> ado.net
+	COPY PASTA 
+	in VS 
+	Web config 
+	<connection strings>
+	PASTAAAAAAAAAAAAAAAAA
+	</connection strings>
+
+This connects the local app with the remote DB
+
+web app 
+	applications settings
+	connection strings
+	PRIVATE
+
+API keys can go here too
+****************************************
+Should just need to push code to the online application
+(BUILD FIST or yolo)
+build ->publish -> azure -> select existing -> double click the correct resource group
+	It's ALIVE!
+	Loads browser with the app (Claps quietly and sadly to self)
+Might want to use Azure DB even when doing local development to get used to it.   
